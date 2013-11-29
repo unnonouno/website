@@ -1,0 +1,226 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Anomaly &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="../index.html" />
+    <link rel="up" title="Tutorial" href="../tutorial.html" />
+    <link rel="next" title="Python" href="anomaly_python.html" />
+    <link rel="prev" title="Python" href="stat_python.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_distributed.html">Setup in Distributed Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtocontribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutus.html">About Us</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Anomaly</a><ul>
+<li><a class="reference internal" href="#abstract-of-sample-program">Abstract of sample program</a></li>
+<li><a class="reference internal" href="#processing-flow">Processing flow</a></li>
+<li><a class="reference internal" href="#sample-program">Sample Program</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="stat_python.html"
+         title="Previous Chapter: Python">&laquo; Python</a></li>
+  <li><a href="anomaly_python.html"
+         title="Next Chapter: Python">Python &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="../_sources/tutorial/anomaly.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="anomaly">
+<h1>Anomaly<a class="headerlink" href="#anomaly" title="Permalink to this headline">¶</a></h1>
+<p>In this sample program, we will introduce how to detect anomaly values by using the jubaanomaly function from Jubatus Client.</p>
+<p>Jubatus uses LOF（Local Outlier Factor) algorithm to support its anomaly detection.
+The key idea of LOF is comparing the local density of a point&#8217;s neighborhood with the local density of its neighbors. Points that have a substantially lower density than their neighbors are considered to be outliers.
+LOF can be used for fraud detectin, fault detection, etc.</p>
+<div class="section" id="abstract-of-sample-program">
+<h2>Abstract of sample program<a class="headerlink" href="#abstract-of-sample-program" title="Permalink to this headline">¶</a></h2>
+<p>In this sample, we use the KDD Cup（Knowledge Discovery and Data Mining Cup） data for learning and detection.
+At first, the data input from client side will be extracted and sent to server side for learning. Then, client will have a return value for each data as the judgement of anomaly detection, and demonstrate the results to the users.
+KDD Cup data <tt class="docutils literal"><span class="pre">kddcup.data_10_percent.gz</span></tt> is available from <a class="reference external" href="http://kdd.ics.uci.edu/databases/kddcup99/kddcup99.html">KDD Cup 1999 Data</a>. Please decompress it after download.</p>
+</div>
+<div class="section" id="processing-flow">
+<h2>Processing flow<a class="headerlink" href="#processing-flow" title="Permalink to this headline">¶</a></h2>
+<p>Main flow of using Jubatus Client</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Connection settings to Jubatus Server</li>
+</ol>
+<blockquote>
+<div>Setting the HOST, RPC port of Jubatus Server</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Prepare the learning data</li>
+</ol>
+<blockquote>
+<div>Read the data from kddcup.data_10_percent.txt line by line.</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Model training（Update learning model）</li>
+</ol>
+<blockquote>
+<div>Using the add() method to send the learning data to server side, and training the learning model there.</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Output the result</li>
+</ol>
+<blockquote>
+<div>The return result in add() method is the judgement from the detection model at server side.</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sample-program">
+<h2>Sample Program<a class="headerlink" href="#sample-program" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="anomaly_python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_python.html#source-code">Source_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_python.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_python.html#run-the-sample-program">Run the sample program</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="anomaly_ruby.html">Ruby</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_ruby.html#source-code">Source_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_ruby.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_ruby.html#run-the-sample-program">Run the sample program</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="anomaly_java.html">Java</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_java.html#source-code">Source_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_java.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="anomaly_java.html#run-the-sample-program">Run the sample program</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

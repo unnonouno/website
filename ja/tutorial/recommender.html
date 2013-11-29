@@ -1,0 +1,238 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Recommender &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="../index.html" />
+    <link rel="up" title="チュートリアル" href="../tutorial.html" />
+    <link rel="next" title="Python" href="recommender_python.html" />
+    <link rel="prev" title="Java" href="classifier_java.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">クイックスタート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview/summary.html">Jubatus Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_distributed.html">分散モードでのセットアップ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtocontribute.html">プロジェクトに貢献する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc.html">その他の情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutus.html">プロジェクトについて</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Recommender</a><ul>
+<li><a class="reference internal" href="#id1">サンプルプログラムの概要</a></li>
+<li><a class="reference internal" href="#id2">処理の流れ</a></li>
+<li><a class="reference internal" href="#id3">サンプルプログラム</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="classifier_java.html"
+         title="Previous Chapter: Java">&laquo; Java</a></li>
+  <li><a href="recommender_python.html"
+         title="Next Chapter: Python">Python &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="../_sources/tutorial/recommender.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="recommender">
+<h1>Recommender<a class="headerlink" href="#recommender" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>ここではJubatusの推薦（Recommender）である <tt class="docutils literal"><span class="pre">jubarecommender</span></tt> を使用した、Jubatus Clientの使い方を説明します。</p>
+<p>推薦（Recommender）とは、類似するデータの推薦やデータ中の同属性の推薦を行う機能であり、検索サイト連動広告やECサイト商品お勧めなどに利用することができます。</p>
+<div class="section" id="id1">
+<h2>サンプルプログラムの概要<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>サンプルとして、2012年日本プロ野球の野手成績を学習し、似たタイプ（成績）の野手を推薦するプログラム「 <a class="reference external" href="https://github.com/jubatus/jubatus-example/tree/master/npb_similar_player">npb_similar_player</a> 」を用いて説明していきます。</p>
+<p>最初に、 <a class="reference external" href="http://baseball-data.com/">プロ野球データfreak</a> から取得した「規定打席の1/3以上の全野手のデータ」を打席数順にソートした CSV データ (<a class="reference external" href="https://raw.github.com/jubatus/jubatus-example/master/npb_similar_player/dat/baseball.csv">baseball.csv</a>) をクライアント側で用意し、推薦するためのモデルを <tt class="docutils literal"><span class="pre">jubarecommender</span></tt> に学習させます。</p>
+<p>次に、推薦用の入力データとして学習時と同様にCSVファイルから名前だけを抽出し <tt class="docutils literal"><span class="pre">jubarecommender</span></tt> に与えます。
+<tt class="docutils literal"><span class="pre">jubarecommender</span></tt> は先ほど学習したモデルを用い、タイプ（成績）が似ている野手を推薦し返却するので、クライアント側では受け取った結果を出力します。</p>
+<p>例えば、推薦用の入力データとして「中田翔」を渡すと、「player 中田翔 is similar to : 井口資仁 新井貴浩 中村紀洋」と似たタイプ（成績）の野手トップ3が返却されます。</p>
+</div>
+<div class="section" id="id2">
+<h2>処理の流れ<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jubatus Clientを使ったコーディングは、主に以下の流れになります。</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt><tt class="docutils literal"><span class="pre">jubarecommender</span></tt> への接続設定</dt>
+<dd><p class="first last"><tt class="docutils literal"><span class="pre">jubarecommender</span></tt> のホストやポート番号を指定し、接続設定をします。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>学習用データの準備</dt>
+<dd><p class="first last">baseball.csvの全野手の成績から学習用データを作成します。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>データの学習（学習モデルの更新）</dt>
+<dd><p class="first last">作成した学習用データ1行ずつを <tt class="docutils literal"><span class="pre">update_row</span></tt> メソッドで <tt class="docutils literal"><span class="pre">jubarecommender</span></tt> に与え、学習を行います。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>推薦用データの準備</dt>
+<dd><p class="first last">推薦用に <tt class="docutils literal"><span class="pre">jubarecommender</span></tt> に投げる、野手情報のデータを作成します。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>学習モデルに基づく推薦</dt>
+<dd><p class="first last">4. で作成した推薦用データを入力値とし、 <tt class="docutils literal"><span class="pre">similar_row_from_id</span></tt> メソッドで 3. の学習に基づいた推薦をします。</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>結果の出力</dt>
+<dd><p class="first last"><tt class="docutils literal"><span class="pre">similar_row_from_id</span></tt> メソッドの戻り値である推薦結果を出力します。</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="id3">
+<h2>サンプルプログラム<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recommender_python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recommender_python.html#id1">ソースコード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recommender_python.html#id2">解説</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recommender_python.html#id3">サンプルプログラムの実行</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="recommender_ruby.html">Ruby</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="recommender_ruby.html#id1">ソースコード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recommender_ruby.html#id2">解説</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recommender_ruby.html#id3">サンプルプログラムの実行</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>現在、Python と Ruby 以外の言語のサンプルプログラムはありません。(みなさまのコントリビューションをお待ちしています!)</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3 で生成しました。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

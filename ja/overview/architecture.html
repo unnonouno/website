@@ -1,0 +1,258 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>アーキテクチャ概要 &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="../index.html" />
+    <link rel="up" title="Jubatus Overview" href="summary.html" />
+    <link rel="next" title="分散学習機構Mixの概念説明" href="mix.html" />
+    <link rel="prev" title="Jubatusの機械学習ラインナップと利用シーン" href="machine_learning.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">クイックスタート</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="summary.html">Jubatus Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_distributed.html">分散モードでのセットアップ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtocontribute.html">プロジェクトに貢献する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc.html">その他の情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutus.html">プロジェクトについて</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">アーキテクチャ概要</a><ul>
+<li><a class="reference internal" href="#id2">システム構成</a></li>
+<li><a class="reference internal" href="#id3">学習モデルの共有</a></li>
+<li><a class="reference internal" href="#id4">計算モデル</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="machine_learning.html"
+         title="Previous Chapter: Jubatusの機械学習ラインナップと利用シーン">&laquo; Jubatusの機械学習ラインナ...</a></li>
+  <li><a href="mix.html"
+         title="Next Chapter: 分散学習機構Mixの概念説明">分散学習機構Mixの概念説明 &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="../_sources/overview/architecture.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="id1">
+<h1>アーキテクチャ概要<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>本項では、Jubatusの構成に関する以下の3点について説明します。</p>
+<blockquote>
+<div><p>・ システム構成</p>
+<p>・ 学習モデルの共有</p>
+<p>・ 計算モデル</p>
+</div></blockquote>
+<div class="section" id="id2">
+<h2>システム構成<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jubatusには3種類のノードが存在します。分析を行うJubatusサーバ、Jubatusサーバに学習データを渡し、結果を受け取るクライアント、そして分散環境において仲介する管理ノード（Proxy）の3種類となります。</p>
+<p>Jubatus サーバはモデル情報を格納し、クライアントから受け取ったデータを用いて分析を行います。
+自分が保有しているモデル情報を他のJubatusサーバと共有するために、定期的にmix操作を呼出、自分のモデル情報を交換します。</p>
+<p>クライアントは、実際にデータをJubatus サーバに与え、処理結果を受け取るノードです。
+分散環境では、クライアントは管理ノードに問い合わせを行うことで、分散されたJubatusサーバを意識せずに処理を行うことができます。</p>
+<p>ここでは、classifierを例に解説します。
+他のタスクの場合は、classifierをrecommender, regressionのように読み替えてください。</p>
+<p><em>パターン1</em></p>
+<p>Jubatusの最も基本的なシステム構成は、以下の図に示すような単一のJubatusクライアントと単一のJubatusサーバ(jubaclassifier)の組み合わせとなります。</p>
+<p class="blockdiag">
+<img src="../_images/blockdiag-bfc94537d3d6a52034f27eddda26c7a849fdae95.png" alt="None" width="448" height="120" />
+</p>
+<p><em>パターン2</em></p>
+<p>JubatusではJubatus サーバ側の処理をスケールアウトさせるため、以下の図のように複数のJubatus サーバを使用した分散環境とし、分散処理を行うことができます。
+複数Jubatus サーバ間のプロセスは、ZooKeeperを用いて協調動作します。
+クライアントは、jubaclassifier_proxyと呼ばれるプロセスにアクセスしますが、jubaclassifier_proxyはjubaclassifierと同じインターフェイスを持つように設計されています。そのため、クライアントは後ろで分散しているかどうかを気にする必要がありません。</p>
+<p class="blockdiag">
+<img src="../_images/blockdiag-0b47b09550aab64297de2dae0bb42bb96e9c4314.png" alt="None" width="640" height="280" />
+</p>
+<p><em>パターン3</em></p>
+<p>Jubatusでは、データ量が膨大である、データソースが離れているなどの理由でクライアントを分散させることも可能です。
+この場合は、以下の図のように複数のクライアントに対してそれぞれjubaclassifier_proxyを実行してください。</p>
+<p class="blockdiag">
+<img src="../_images/blockdiag-52c7162452245223d479f0cac422c5f4c9975d30.png" alt="None" width="640" height="280" />
+</p>
+<p>パターン2でクライアント側がボトルネックになっていたり、分散している場合にパターン3を使う、と考えてください。</p>
+<p><em>推奨するプロセス配置構成について</em></p>
+<p>Jubatusを高い信頼性のもとで提供するためには、分散環境で動作させる必要があります。また高いパフォーマンスを維持するためには、JubatusおよびJubatusに関連するプロセス配置構成に気をつける必要があります。
+以下の図に、推奨するプロセス配置構成を示します。</p>
+<p class="blockdiag">
+<img src="../_images/blockdiag-37df7b3febece5cf93d534f3bd0bde4ff4002a4a.png" alt="None" width="832" height="360" />
+</p>
+<blockquote>
+<div><ul class="simple">
+<li>Jubatus Proxy</li>
+</ul>
+<blockquote>
+<div>jubaXXX_proxyという名前の実行ファイルの総称をJubatus Proxyと表記します。
+運用の容易さ、アプリケーションの実装の容易さから、クライアントアプリケーションと1:1の構成とし、クライアントアプリケーションと同一のサーバで動作させることを推奨します。
+クライアントアプリケーションからJubatus Proxyへ通信できない場合（プロセスがダウンしているなど）に対して、再度プロセスを起動し直すなどの制御が必要になるためです。</div></blockquote>
+<ul class="simple">
+<li>Jubatus Server</li>
+</ul>
+<blockquote>
+<div><p>jubaXXXという名前の実行ファイルをJubatus Serverと表記します。
+<tt class="docutils literal"><span class="pre">--name</span></tt> で同じ名前を指定することで、複数のサーバプロセスが協調動作します。Jubatusは、サーバプロセスが1つでも動作している限り、利用可能です。</p>
+<p>上の図では、マシンのN 台に障害が発生した場合でも、すべてのインスタンスが利用可能なよう、N+1台のマシンに分散してプロセスを配置しています。</p>
+<p>Jubatusはすべてのデータをメモリ上で処理するという特徴があります。マシンのリソース(特にメモリ)が不足しないよう、サーバプロセスの配置には注意する必要があります。</p>
+</div></blockquote>
+<ul class="simple">
+<li>ZooKeeper</li>
+</ul>
+<blockquote>
+<div><p>Jubatusを分散環境で動作させる際、必ずZooKeeperが利用できる必要があります。ZooKeeperを高い信頼性で動作させるために、以下のことを注意します。詳細はZooKeeperのドキュメントを参照して下さい。</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>奇数台のマシンによるクラスタ構成(アンサンブル)で運用します。</li>
+<li>ZooKeeperのパフォーマンスが低下し、Jubatusの動作が不安定になることを避けるため、ZooKeeper専用のマシンを用意することを推奨します。</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="id3">
+<h2>学習モデルの共有<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jubatusはモデル情報を緩やかに共有し、同一時刻において同じモデルが全サーバノードで共有されていることが保証されていない、という割り切りをしています。</p>
+<p>一般にリアルタイム、大規模分散、深い分析の3つの特徴はトレードオフの関係にあり、全てを同時に満足させることは困難です。
+例えばMapReduceなどの基盤はバッチ処理に特化しており、クエリーの結果を瞬時に得ると言ったことは苦手です。またComplexEventProcessingなどにおいては複数のノードの情報を共有することは困難です。</p>
+<p>Jubatusはオンライン機械学習やオンラインアルゴリズムの積極的な活用、および緩やかなモデル情報の共有によりこれらの問題を解決しています。</p>
+</div>
+<div class="section" id="id4">
+<h2>計算モデル<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jubatusでは、Update、Analyze、Mixと呼ばれる3つの種類の操作を定義することで、分散環境においてもさまざまなデータ分析を行えることを実現しています。
+これは、MapReduceがMapとReduceの2つの操作を定義することで分散処理を実現することと同様です。</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>・ Update</dt>
+<dd>Updateでは、データと現在のモデルが与えられた時、更新したモデル結果を返す操作です。この操作は各ローカルノード（各サーバノード）内において排他的に行う必要があります。</dd>
+<dt>・ Analyze</dt>
+<dd>Analyzeでは、現在のモデルに基づいて与えられたデータを分析し、分析結果を返す操作です。この操作はモデルを更新せず読み込み処理だけで実現でき、並列化することが可能です。</dd>
+<dt>・ Mix</dt>
+<dd>Mixは2つのモデルが与えられた時、それらを混ぜたモデルを返す操作です。多くの分類の学習問題など、凸最適化問題に帰着する問題においては、Mix操作は単純な平均操作で高速に収束することが知られています。</dd>
+</dl>
+</div></blockquote>
+<p>Update、Analyzeの2つの操作はユーザがクライアントノードから呼び出す操作であるのに対し、Mixはユーザから呼び出すことは無く、分析モデルにしたがってシステム側が裏で自動的に呼び出すようになっています。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3 で生成しました。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

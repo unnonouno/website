@@ -1,0 +1,247 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Classifier &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="../_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="../_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="../index.html" />
+    <link rel="up" title="Tutorial" href="../tutorial.html" />
+    <link rel="next" title="Python" href="classifier_python.html" />
+    <link rel="prev" title="Tutorial" href="../tutorial.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="../index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorial_distributed.html">Setup in Distributed Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../howtocontribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../misc.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../aboutus.html">About Us</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Classifier</a><ul>
+<li><a class="reference internal" href="#overview">Overview</a></li>
+<li><a class="reference internal" href="#scenario">Scenario</a></li>
+<li><a class="reference internal" href="#sample-program">Sample Program</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="../tutorial.html"
+         title="Previous Chapter: Tutorial">&laquo; Tutorial</a></li>
+  <li><a href="classifier_python.html"
+         title="Next Chapter: Python">Python &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="../_sources/tutorial/classifier.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="classifier">
+<h1>Classifier<a class="headerlink" href="#classifier" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we introduce a way to use <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> through a Jubatus client.</p>
+<p>Classifier is a module to classify given data. For example, you can use Classifier to detect spam e-mails.</p>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<p>Let&#8217;s use <a class="reference external" href="https://github.com/jubatus/jubatus-example/tree/master/gender">gender</a> as a sample program using Classifier. This program classifies a person into male or female through the features of his/her hair style, height and clothes.</p>
+<p>As a first step, the program updates the model of <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> using the training data. A training data is a pair of a class (male or female) and features (hair style, height, clothes). After preparing some training data, the program makes <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> learn them.</p>
+<p>Next, the program analyzes the test data using model of <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> . It prepares test data, and then <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> classifies each of them into male or female using the learned model.</p>
+<p>For example, if you give the feature data as following to <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt>, it will return &#8220;female&#8221;.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="s">&quot;hair&quot;</span> <span class="ow">is</span> <span class="s">&quot;long&quot;</span>
+<span class="s">&quot;top&quot;</span> <span class="ow">is</span> <span class="s">&quot;shirt&quot;</span>
+<span class="s">&quot;bottom&quot;</span> <span class="ow">is</span> <span class="s">&quot;skirt&quot;</span>
+<span class="s">&quot;height&quot;</span> <span class="ow">is</span> <span class="mf">1.50</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="scenario">
+<h2>Scenario<a class="headerlink" href="#scenario" title="Permalink to this headline">¶</a></h2>
+<p>The following is a typical flow of development using Jubatus Client:</p>
+<ol class="arabic">
+<li><dl class="first docutils">
+<dt>Sets a connection configuration to <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt></dt>
+<dd><p class="first last">Setting the HOST, RPC port and the instance name of <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> .</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Prepare training data</dt>
+<dd><p class="first last">Make some pairs of classes and feature sets.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Train the model using prepared data (update the model)</dt>
+<dd><p class="first last">Send the training data to <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> using <tt class="docutils literal"><span class="pre">train</span></tt> method.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Prepare the test data</dt>
+<dd><p class="first last">Make a set of feature data.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Classify the test data</dt>
+<dd><p class="first last">Send the test data to <tt class="docutils literal"><span class="pre">jubaclassifier</span></tt> using <tt class="docutils literal"><span class="pre">classify</span></tt> method.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>Output the result</dt>
+<dd><p class="first last">Compare the score value of each class, and output the class of the highest score.</p>
+</dd>
+</dl>
+</li>
+</ol>
+</div>
+<div class="section" id="sample-program">
+<h2>Sample Program<a class="headerlink" href="#sample-program" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="classifier_python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classifier_python.html#source-code">Source_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifier_python.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifier_python.html#run-the-sample-program">Run the sample program</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="classifier_ruby.html">Ruby</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classifier_ruby.html#source-code">Source_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifier_ruby.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifier_ruby.html#run-the-sample-program">Run the sample program</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="classifier_java.html">Java</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="classifier_java.html#source-code">Source_code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifier_java.html#explanation">Explanation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classifier_java.html#run-the-sample-program">Run the sample program</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

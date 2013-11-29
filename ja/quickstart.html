@@ -1,0 +1,303 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>クイックスタート &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="index.html" />
+    <link rel="next" title="Jubatus Overview" href="overview/summary.html" />
+    <link rel="prev" title="Jubatus : オンライン機械学習向け分散処理フレームワーク" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">クイックスタート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/summary.html">Jubatus Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distributed.html">分散モードでのセットアップ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">プロジェクトに貢献する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">その他の情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">プロジェクトについて</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">クイックスタート</a><ul>
+<li><a class="reference internal" href="#jubatus">Jubatus のインストール</a><ul>
+<li><a class="reference internal" href="#red-hat-enterprise-linux-6-2-64-bit">Red Hat Enterprise Linux 6.2 以降 (64-bit)</a></li>
+<li><a class="reference internal" href="#ubuntu-server-12-04-lts-64-bit">Ubuntu Server 12.04 LTS (64-bit)</a></li>
+<li><a class="reference internal" href="#linux-32-bit">その他の Linux 環境 (32-bit を含む)</a></li>
+<li><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Jubatus クライアントのインストール</a><ul>
+<li><a class="reference internal" href="#c">C++</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#ruby">Ruby</a></li>
+<li><a class="reference internal" href="#java">Java</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id3">チュートリアル</a></li>
+<li><a class="reference internal" href="#id4">作ってみよう！</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="index.html"
+         title="Previous Chapter: Jubatus : オンライン機械学習向け分散処理フレームワーク">&laquo; Jubatus : オンライン機...</a></li>
+  <li><a href="overview/summary.html"
+         title="Next Chapter: Jubatus Overview">Jubatus Overview &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="_sources/quickstart.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="id1">
+<h1>クイックスタート<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<div class="section" id="jubatus">
+<h2>Jubatus のインストール<a class="headerlink" href="#jubatus" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Red Hat Enterprise Linux 6.2 以降 (64-bit) と Ubuntu Server 12.04 LTS (64-bit) を公式にサポートしています。
+これらのシステムでは、Jubatus のすべてのコンポーネントをバイナリパッケージでインストールすることができます。</p>
+<p>また、その他の Linux 環境 (32-bit を含む) と Mac OS X が試験的にサポートされています。</p>
+<div class="section" id="red-hat-enterprise-linux-6-2-64-bit">
+<h3>Red Hat Enterprise Linux 6.2 以降 (64-bit)<a class="headerlink" href="#red-hat-enterprise-linux-6-2-64-bit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下のコマンドを実行して、Jubatus の Yum リポジトリをシステムに登録します。</p>
+<div class="highlight-python"><pre>$ sudo rpm -Uvh http://download.jubat.us/yum/rhel/6/stable/x86_64/jubatus-release-6-1.el6.x86_64.rpm</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">jubatus</span></tt> と <tt class="docutils literal"><span class="pre">jubatus-client</span></tt> のパッケージをインストールします。</p>
+<div class="highlight-python"><pre>// RHEL の場合
+$ sudo yum --enablerepo=rhel-6-server-optional-rpms install jubatus jubatus-client
+
+// RHEL クローン (CentOS, Scientific Linux など) の場合
+$ sudo yum install jubatus jubatus-client</pre>
+</div>
+<p>RHEL では、依存パッケージ (<tt class="docutils literal"><span class="pre">oniguruma</span></tt>) のインストールに <tt class="docutils literal"><span class="pre">rhel-6-server-optional-rpms</span></tt> リポジトリを使用している点に注意してください。</p>
+</div>
+<div class="section" id="ubuntu-server-12-04-lts-64-bit">
+<h3>Ubuntu Server 12.04 LTS (64-bit)<a class="headerlink" href="#ubuntu-server-12-04-lts-64-bit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>以下の行を <tt class="docutils literal"><span class="pre">/etc/apt/sources.list.d/jubatus.list</span></tt> に記述して、Jubatus の Apt リポジトリをシステムに登録します。</p>
+<div class="highlight-python"><pre>deb http://download.jubat.us/apt binary/</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">jubatus</span></tt> のパッケージをインストールします。</p>
+<div class="highlight-python"><pre>$ sudo apt-get update
+$ sudo apt-get install jubatus</pre>
+</div>
+<p>現在、パッケージには GPG 署名が行われていません。
+以下の警告メッセージが表示された場合は、 <tt class="docutils literal"><span class="pre">y</span></tt> を入力してください。</p>
+<div class="highlight-python"><pre>Install these packages without verification [y/N]? y</pre>
+</div>
+<p>これで、Jubatus が <tt class="docutils literal"><span class="pre">/opt/jubatus</span></tt> にインストールされました。</p>
+<p>Jubatus を使う前に、毎回 <tt class="docutils literal"><span class="pre">profile</span></tt> スクリプトから環境変数を読み込む必要があります。</p>
+<div class="highlight-python"><pre>$ source /opt/jubatus/profile</pre>
+</div>
+<p>csh または tcsh をお使いの場合は、こちらを使用してください。</p>
+<div class="highlight-python"><pre>$ source /opt/jubatus/profile.csh</pre>
+</div>
+</div>
+<div class="section" id="linux-32-bit">
+<h3>その他の Linux 環境 (32-bit を含む)<a class="headerlink" href="#linux-32-bit" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p><a class="reference external" href="https://github.com/jubatus/jubatus-installer">jubatus-installer</a> を使用するか、 <a class="reference internal" href="build.html"><em>Jubatus をソースからビルドする</em></a> を参照してソースからビルドしてください。</p>
+</div>
+<div class="section" id="mac-os-x">
+<h3>Mac OS X<a class="headerlink" href="#mac-os-x" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Homebrew をお使いの場合は、 <a class="reference external" href="https://github.com/jubatus/homebrew-jubatus">tap リポジトリ</a> を使用すると簡単にインストールが行えます。</p>
+<p>それ以外の場合は、 <a class="reference external" href="https://github.com/jubatus/jubatus-installer">jubatus-installer</a> を使用するか、 <a class="reference internal" href="build.html"><em>Jubatus をソースからビルドする</em></a> を参照してソースからビルドしてください。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Jubatus クライアントのインストール<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jubatus を使ったクライアントアプリケーションは C++, Python, Ruby または Java で記述することができます。
+クライアントアプリケーションから Jubatus を使うには、各言語のクライアントライブラリをインストールする必要があります。
+クライアントライブラリは MIT License の下で配布されています。</p>
+<p><a class="reference internal" href="tutorial.html"><em>チュートリアル</em></a> を試す場合は、Python クライアントだけをインストールすれば十分です。</p>
+<p>Jubatus と Jubatus クライアントのバージョンは異なることがあります。これは、Jubatus の API が変更されない場合はクライアント側のアップデートが不要なためです。</p>
+<div class="section" id="c">
+<h3>C++<a class="headerlink" href="#c" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>クライアントは Jubatus フレームワークに含まれている (<tt class="docutils literal"><span class="pre">$PREFIX/include/jubatus/client/*_client.hpp</span></tt>) ため、インストールは不要です。</p>
+<p>コンパイラや開発用のヘッダがインストールされていない場合は、以下の手順でセットアップを行ってください。
+RHEL では、以下のコマンドを実行します。</p>
+<div class="highlight-python"><pre>$ sudo yum groupinstall "Development tools" "Additional Development"</pre>
+</div>
+<p>Ubuntu では、以下のコマンドを実行します。</p>
+<div class="highlight-python"><pre>$ sudo apt-get install build-essential</pre>
+</div>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>クライアント (Python 2.7 以降が必要) は <a class="reference external" href="http://pypi.python.org/pypi/jubatus">PyPI</a> で配布されています。</p>
+<div class="highlight-python"><pre>$ sudo pip install jubatus</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">pip</span></tt> コマンドがインストールされていない場合は、以下の手順でインストールしてください。</p>
+<div class="highlight-python"><pre>$ wget http://peak.telecommunity.com/dist/ez_setup.py
+$ sudo python ez_setup.py
+$ sudo easy_install pip</pre>
+</div>
+<p>Ubuntu では <tt class="docutils literal"><span class="pre">pip</span></tt> のインストールに <tt class="docutils literal"><span class="pre">python-pip</span></tt> パッケージを利用することもできます。</p>
+</div>
+<div class="section" id="ruby">
+<h3>Ruby<a class="headerlink" href="#ruby" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>クライアント (Ruby 1.9 が必要) は <a class="reference external" href="http://rubygems.org/gems/jubatus">RubyGems</a> で配布されています。</p>
+<div class="highlight-python"><pre>$ sudo gem install jubatus</pre>
+</div>
+</div>
+<div class="section" id="java">
+<h3>Java<a class="headerlink" href="#java" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>クライアントは Jubatus の Maven リポジトリで配布されています。
+以下の記述をあなたのプロジェクトの <tt class="docutils literal"><span class="pre">pom.xml</span></tt> に追加してください。</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;repositories&gt;</span>
+  <span class="nt">&lt;repository&gt;</span>
+    <span class="nt">&lt;id&gt;</span>jubat.us<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;name&gt;</span>Jubatus Repository for Maven<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://download.jubat.us/maven<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+
+<span class="nt">&lt;dependencies&gt;</span>
+  <span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>us.jubat<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>jubatus<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.5.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>チュートリアル<a class="headerlink" href="#id3" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p><a class="reference internal" href="tutorial.html"><em>チュートリアル</em></a> を試してみましょう (Python クライアントが必要です)。</p>
+</div>
+<div class="section" id="id4">
+<h2>作ってみよう！<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>おめでとうございます!
+これで、Jubatus を使ってあなた独自のアプリケーションを書く準備ができました。
+Jubatus がどのような機能を持っているか知るには、 <a class="reference internal" href="api.html"><em>Client API</em></a> をチェックしてください。</p>
+<p>C++ または Java でクライアントを開発する場合は、以下のスケルトンプロジェクトを使用すると便利です。</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-cpp-skeleton">C++ クライアント開発用スケルトン</a></li>
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-python-skeleton">Python クライアント開発用スケルトン</a></li>
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-ruby-skeleton">Ruby クライアント開発用スケルトン</a></li>
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-java-skeleton">Java クライアント開発用スケルトン</a> (Eclipse プロジェクトのテンプレート)</li>
+</ul>
+<p><a class="reference external" href="https://github.com/jubatus/jubatus-example">jubatus-example</a> リポジトリでは、Jubatus を利用したアプリケーションの実例を見ることができます。</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3 で生成しました。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

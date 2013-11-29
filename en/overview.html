@@ -1,0 +1,193 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Overview &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="index.html" />
+    <link rel="next" title="Tutorial" href="tutorial.html" />
+    <link rel="prev" title="Quick Start" href="quickstart.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distributed.html">Setup in Distributed Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">About Us</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Overview</a><ul>
+<li><a class="reference internal" href="#scalable">Scalable</a></li>
+<li><a class="reference internal" href="#real-time">Real-Time</a></li>
+<li><a class="reference internal" href="#deep-analysis">Deep-Analysis</a></li>
+<li><a class="reference internal" href="#difference-from-hadoop-and-mahout">Difference from Hadoop and Mahout</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="quickstart.html"
+         title="Previous Chapter: Quick Start">&laquo; Quick Start</a></li>
+  <li><a href="tutorial.html"
+         title="Next Chapter: Tutorial">Tutorial &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="_sources/overview.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="overview">
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
+<p>In the coming era of extremely large databases, computer science will face new challenges in real Big Data applications such as nation-wide M2M sensor network analysis, online advertising optimization for millions of consumers, and real-time security monitoring on the raw Internet traffic.</p>
+<p>In such applications, it is impractical or useless to apply ordinary approaches for data analysis on small datasets by storing all data into databases, analyzing the data on the databases as a batch-processing, and only visualizing the summarized output.</p>
+<p>In fact, the future of data analytics platform should expand to three directions at the same time, handling even bigger data, applying deep analytics, and processing in real-time. However, there has been no such analytics platform for massive data streams of continuously generated Big Data with distributed scale-out architecture. For example,
+Jubatus is the first open source platform for online distributed machine learning on the data streams of Big Data. We use a loose model sharing architecture for efficient training and sharing of machine learning models, by defining three fundamental operations; Update, Mix, and Analyze, in a similar way with the Map and Reduce operations in Hadoop.
+The point is how to reduce the size of model and the number of the Mix operations while keeping high accuracy, since Mix-ing large models for many times causes high networking cost and high latency in the distributed environment.</p>
+<p>Then our development team includes competent researchers who combine the latest advances in online machine learning, distributed computing, and randomized algorithms to provide efficient machine learning features for Jubatus. Currently, Jubatus supports basic tasks including classification, regression, clustering, nearest neighbor, outlier detection, and recommendation. A demo system for tweet categorization on fast Twitter data streams is available.</p>
+<p>Jubatus is the first open source platform for online distributed machine learning on the data streams of Big Data.</p>
+<p>Jubatus uses a loose model sharing architecture for efficient training and sharing of machine learning models, by defining three fundamental operations; Update, Mix, and Analyze, in a similar way with the Map and Reduce operations in Hadoop.</p>
+<p>Our development team includes competent researchers who combine the latest advances in online machine learning, distributed computing, and randomized algorithms to provide efficient machine learning features for Jubatus.
+Currently, Jubatus supports basic tasks including classification, regression, and recommendation.</p>
+<div class="section" id="scalable">
+<h2>Scalable<a class="headerlink" href="#scalable" title="Permalink to this headline">¶</a></h2>
+<p>Jubatus supports scalable machine learning processing. It can handle 100000 or more data per second using commodity hardware clusters. It is designed for clusters of commodity, shared-nothing hardware.</p>
+</div>
+<div class="section" id="real-time">
+<h2>Real-Time<a class="headerlink" href="#real-time" title="Permalink to this headline">¶</a></h2>
+<p>Jubatus updates a model instantaneously just after receiving a data, and it analyze the data instantaneously</p>
+</div>
+<div class="section" id="deep-analysis">
+<h2>Deep-Analysis<a class="headerlink" href="#deep-analysis" title="Permalink to this headline">¶</a></h2>
+<p>Jubatus supports most tasks for deep analysis, including classification, regression, nearest neighbor, recommendation, anomaly detection, clustering, cluster analysis, simple statistics, and graph analysis,</p>
+</div>
+<div class="section" id="difference-from-hadoop-and-mahout">
+<h2>Difference from Hadoop and Mahout<a class="headerlink" href="#difference-from-hadoop-and-mahout" title="Permalink to this headline">¶</a></h2>
+<p>There many similar points between Hadoop/Mahout and Jubatus. These are scalable and run on commodity hardware.
+However, Hadoop is not equipped with sophisticated machine learning algorithms since most of the algorithms do not fit its MapReduce paradigm. Though Apache Mahout is also a Hadoop-based machine learning platform, online processing of data streams is still out of the scope.</p>
+<p>Jubatus processes data in online manner, and achieve high throughput and low latency.
+To achieve these features together, Jubatus uses a unique loosely model synchronization for scale out and fast model sharing in distributed environments.</p>
+<p>Jubatus processes all data in memory, and focus on operations for data analysis.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

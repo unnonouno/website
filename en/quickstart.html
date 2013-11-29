@@ -1,0 +1,302 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Quick Start &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="index.html" />
+    <link rel="next" title="Overview" href="overview.html" />
+    <link rel="prev" title="Jubatus : Distributed Online Machine Learning Framework" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">Tutorial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distributed.html">Setup in Distributed Mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">Documentation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">How to Contribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">Miscellaneous</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">About Us</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Quick Start</a><ul>
+<li><a class="reference internal" href="#install-jubatus">Install Jubatus</a><ul>
+<li><a class="reference internal" href="#red-hat-enterprise-linux-6-2-or-later-64-bit">Red Hat Enterprise Linux 6.2 or later (64-bit)</a></li>
+<li><a class="reference internal" href="#ubuntu-server-12-04-lts-64-bit">Ubuntu Server 12.04 LTS (64-bit)</a></li>
+<li><a class="reference internal" href="#other-linux-distributions-including-32-bit">Other Linux Distributions (including 32-bit)</a></li>
+<li><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#install-jubatus-client-libraries">Install Jubatus Client Libraries</a><ul>
+<li><a class="reference internal" href="#c">C++</a></li>
+<li><a class="reference internal" href="#python">Python</a></li>
+<li><a class="reference internal" href="#ruby">Ruby</a></li>
+<li><a class="reference internal" href="#java">Java</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#try-tutorial">Try Tutorial</a></li>
+<li><a class="reference internal" href="#write-your-application">Write Your Application</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="index.html"
+         title="Previous Chapter: Jubatus : Distributed Online Machine Learning Framework">&laquo; Jubatus : Distri...</a></li>
+  <li><a href="overview.html"
+         title="Next Chapter: Overview">Overview &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="_sources/quickstart.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-jubatus">
+<h2>Install Jubatus<a class="headerlink" href="#install-jubatus" title="Permalink to this headline">¶</a></h2>
+<p>We officially support Red Hat Enterprise Linux 6.2 or later (64-bit) and Ubuntu Server 12.04 LTS (64-bit).
+On supported systems, you can install all components of Jubatus using binary packages.</p>
+<p>Other Linux distributions (including 32-bit) and Mac OS X are experimentally supported.</p>
+<div class="section" id="red-hat-enterprise-linux-6-2-or-later-64-bit">
+<h3>Red Hat Enterprise Linux 6.2 or later (64-bit)<a class="headerlink" href="#red-hat-enterprise-linux-6-2-or-later-64-bit" title="Permalink to this headline">¶</a></h3>
+<p>Run the following command to register Jubatus Yum repository to the system.</p>
+<div class="highlight-python"><pre>$ sudo rpm -Uvh http://download.jubat.us/yum/rhel/6/stable/x86_64/jubatus-release-6-1.el6.x86_64.rpm</pre>
+</div>
+<p>Now install <tt class="docutils literal"><span class="pre">jubatus</span></tt> and <tt class="docutils literal"><span class="pre">jubatus-client</span></tt> package.</p>
+<div class="highlight-python"><pre>// For RHEL
+$ sudo yum --enablerepo=rhel-6-server-optional-rpms install jubatus jubatus-client
+
+// For RHEL clones (CentOS, Scientific Linux, etc.)
+$ sudo yum install jubatus jubatus-client</pre>
+</div>
+<p>Note that we use <tt class="docutils literal"><span class="pre">rhel-6-server-optional-rpms</span></tt> repository to install dependency package (<tt class="docutils literal"><span class="pre">oniguruma</span></tt>) on RHEL.</p>
+</div>
+<div class="section" id="ubuntu-server-12-04-lts-64-bit">
+<h3>Ubuntu Server 12.04 LTS (64-bit)<a class="headerlink" href="#ubuntu-server-12-04-lts-64-bit" title="Permalink to this headline">¶</a></h3>
+<p>Write the following line to <tt class="docutils literal"><span class="pre">/etc/apt/sources.list.d/jubatus.list</span></tt> to register Jubatus Apt repository to the system.</p>
+<div class="highlight-python"><pre>deb http://download.jubat.us/apt binary/</pre>
+</div>
+<p>Now install <tt class="docutils literal"><span class="pre">jubatus</span></tt> package.</p>
+<div class="highlight-python"><pre>$ sudo apt-get update
+$ sudo apt-get install jubatus</pre>
+</div>
+<p>Currently our package is not GPG-signed.
+Bypass the warning by answering <tt class="docutils literal"><span class="pre">y</span></tt> to the prompt when asked:</p>
+<div class="highlight-python"><pre>Install these packages without verification [y/N]? y</pre>
+</div>
+<p>Now Jubatus is installed in <tt class="docutils literal"><span class="pre">/opt/jubatus</span></tt>.</p>
+<p>Each time before using Jubatus, you need to load the environment variable from <tt class="docutils literal"><span class="pre">profile</span></tt> script.</p>
+<div class="highlight-python"><pre>$ source /opt/jubatus/profile</pre>
+</div>
+<p>If you&#8217;re using csh or tcsh, use this instead:</p>
+<div class="highlight-python"><pre>$ source /opt/jubatus/profile.csh</pre>
+</div>
+</div>
+<div class="section" id="other-linux-distributions-including-32-bit">
+<h3>Other Linux Distributions (including 32-bit)<a class="headerlink" href="#other-linux-distributions-including-32-bit" title="Permalink to this headline">¶</a></h3>
+<p>Use <a class="reference external" href="https://github.com/jubatus/jubatus-installer">jubatus-installer</a> or see <a class="reference internal" href="build.html"><em>Building Jubatus from Source</em></a> to build from source.</p>
+</div>
+<div class="section" id="mac-os-x">
+<h3>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h3>
+<p>If you&#8217;re using Homebrew, you can use <a class="reference external" href="https://github.com/jubatus/homebrew-jubatus">tap repository</a> for installation.</p>
+<p>In other case, use <a class="reference external" href="https://github.com/jubatus/jubatus-installer">jubatus-installer</a> or see <a class="reference internal" href="build.html"><em>Building Jubatus from Source</em></a> to build from source.</p>
+</div>
+</div>
+<div class="section" id="install-jubatus-client-libraries">
+<h2>Install Jubatus Client Libraries<a class="headerlink" href="#install-jubatus-client-libraries" title="Permalink to this headline">¶</a></h2>
+<p>Jubatus client applications can be written in C++, Python, Ruby or Java.
+You need to setup the client library for each language to use Jubatus from client applications.
+Client libraries are distributed under MIT License.</p>
+<p>If you&#8217;re going to try <a class="reference internal" href="tutorial.html"><em>Tutorial</em></a>, just install Python client and go ahead.</p>
+<p>Version of Jubatus and Jubatus clients may be different, as clients are not updated when there are no API changes to Jubatus.</p>
+<div class="section" id="c">
+<h3>C++<a class="headerlink" href="#c" title="Permalink to this headline">¶</a></h3>
+<p>The client is included in the Jubatus framework (<tt class="docutils literal"><span class="pre">$PREFIX/include/jubatus/client/*_client.hpp</span></tt>) and no additional setup is required.</p>
+<p>If you don&#8217;t have compilers and/or development headers installed, you will need to setup them.
+For RHEL systems, type:</p>
+<div class="highlight-python"><pre>$ sudo yum groupinstall "Development tools" "Additional Development"</pre>
+</div>
+<p>For Ubuntu systems, type:</p>
+<div class="highlight-python"><pre>$ sudo apt-get install build-essential</pre>
+</div>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>The client (requires Python 2.7 or later) is available in <a class="reference external" href="http://pypi.python.org/pypi/jubatus">PyPI</a>.</p>
+<div class="highlight-python"><pre>$ sudo pip install jubatus</pre>
+</div>
+<p>If you don&#8217;t have <tt class="docutils literal"><span class="pre">pip</span></tt> command, run the following command:</p>
+<div class="highlight-python"><pre>$ wget http://peak.telecommunity.com/dist/ez_setup.py
+$ sudo python ez_setup.py
+$ sudo easy_install pip</pre>
+</div>
+<p>On Ubuntu, you can also use <tt class="docutils literal"><span class="pre">python-pip</span></tt> package to install <tt class="docutils literal"><span class="pre">pip</span></tt>.</p>
+</div>
+<div class="section" id="ruby">
+<h3>Ruby<a class="headerlink" href="#ruby" title="Permalink to this headline">¶</a></h3>
+<p>The client (requires Ruby 1.9) is available in <a class="reference external" href="http://rubygems.org/gems/jubatus">RubyGems</a>.</p>
+<div class="highlight-python"><pre>$ sudo gem install jubatus</pre>
+</div>
+</div>
+<div class="section" id="java">
+<h3>Java<a class="headerlink" href="#java" title="Permalink to this headline">¶</a></h3>
+<p>The client is available in our Maven repository.
+Please add these lines to <tt class="docutils literal"><span class="pre">pom.xml</span></tt> of your project.</p>
+<div class="highlight-xml"><div class="highlight"><pre><span class="nt">&lt;repositories&gt;</span>
+  <span class="nt">&lt;repository&gt;</span>
+    <span class="nt">&lt;id&gt;</span>jubat.us<span class="nt">&lt;/id&gt;</span>
+    <span class="nt">&lt;name&gt;</span>Jubatus Repository for Maven<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;url&gt;</span>http://download.jubat.us/maven<span class="nt">&lt;/url&gt;</span>
+  <span class="nt">&lt;/repository&gt;</span>
+<span class="nt">&lt;/repositories&gt;</span>
+
+<span class="nt">&lt;dependencies&gt;</span>
+  <span class="nt">&lt;dependency&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>us.jubat<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>jubatus<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>0.5.0<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;/dependency&gt;</span>
+<span class="nt">&lt;/dependencies&gt;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="try-tutorial">
+<h2>Try Tutorial<a class="headerlink" href="#try-tutorial" title="Permalink to this headline">¶</a></h2>
+<p>Try the <a class="reference internal" href="tutorial.html"><em>Tutorial</em></a> (requires Python client).</p>
+</div>
+<div class="section" id="write-your-application">
+<h2>Write Your Application<a class="headerlink" href="#write-your-application" title="Permalink to this headline">¶</a></h2>
+<p>Congratulations!
+Now you can write your own application using Jubatus.
+See the <a class="reference internal" href="api.html"><em>Client API</em></a> for what Jubatus can do.</p>
+<p>Skeleton projects are also available:</p>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-cpp-skeleton">C++ Client Development Skeleton</a></li>
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-python-skeleton">Python Client Develoment Skeleton</a></li>
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-ruby-skeleton">Ruby Client Develoment Skeleton</a></li>
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-java-skeleton">Java Client Development Skeleton</a> (Eclipse project template)</li>
+</ul>
+<p>In the <a class="reference external" href="https://github.com/jubatus/jubatus-example">jubatus-example</a> repository, you can see applications using Jubatus.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

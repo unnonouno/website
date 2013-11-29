@@ -1,0 +1,312 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Jubatus をソースからビルドする &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="index.html" />
+    <link rel="up" title="ドキュメント" href="documentation.html" />
+    <link rel="next" title="フレームワークの利用" href="framework.html" />
+    <link rel="prev" title="プラグインの開発" href="plugin.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/summary.html">Jubatus Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distributed.html">分散モードでのセットアップ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">プロジェクトに貢献する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">その他の情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">プロジェクトについて</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Jubatus をソースからビルドする</a><ul>
+<li><a class="reference internal" href="#requirements">要件</a><ul>
+<li><a class="reference internal" href="#ubuntu-12-04">Ubuntu 12.04</a></li>
+<li><a class="reference internal" href="#mac-os-x">Mac OS X</a></li>
+<li><a class="reference internal" href="#id5">その他の環境</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="plugin.html"
+         title="Previous Chapter: プラグインの開発">&laquo; プラグインの開発</a></li>
+  <li><a href="framework.html"
+         title="Next Chapter: フレームワークの利用">フレームワークの利用 &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="_sources/build.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="jubatus">
+<h1>Jubatus をソースからビルドする<a class="headerlink" href="#jubatus" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Jubatus をソースからビルドすることは可能ですが、できる限りバイナリパッケージ (<a class="reference internal" href="quickstart.html"><em>クイックスタート</em></a> 参照) を使用することを推奨します。
+ソースからビルドする場合は、 <a class="reference external" href="https://github.com/jubatus/jubatus-installer">jubatus-installer</a> が参考になるでしょう。</p>
+<div class="section" id="requirements">
+<span id="id1"></span><h2>要件<a class="headerlink" href="#requirements" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jubatus をソースからビルドするには、 <tt class="docutils literal"><span class="pre">gcc</span></tt> (バージョン 4.4 以降), <tt class="docutils literal"><span class="pre">pkg-config</span></tt> (バージョン 0.26 以降) および <tt class="docutils literal"><span class="pre">python</span></tt> (バージョン 2.4 以降,  <tt class="docutils literal"><span class="pre">waf</span></tt> で使用される) が必要です。
+加えて、以下のライブラリも必要になります。
+サポートされているライブラリのバージョンについては <a class="reference external" href="https://github.com/jubatus/jubatus/wiki/Supported-Library-Versions">Jubatus Wiki</a> をご覧ください。</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="11%" />
+<col width="10%" />
+<col width="59%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ソフトウェア</th>
+<th class="head">バージョン</th>
+<th class="head">必須</th>
+<th class="head">備考</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>msgpack</td>
+<td>&gt;= 0.5.7</td>
+<td>✔</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>jubatus-mpio</td>
+<td>0.4.1</td>
+<td>✔</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>jubatus-msgpack-rpc</td>
+<td>0.4.1</td>
+<td>✔</td>
+<td>C++ クライアントライブラリが必要である。</td>
+</tr>
+<tr class="row-odd"><td>google-glog</td>
+<td>&gt;= 0.3.3</td>
+<td>✔</td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-even"><td>oniguruma</td>
+<td>&gt;= 5.9</td>
+<td><a class="footnote-reference" href="#id4" id="id2">[1]</a></td>
+<td>&nbsp;</td>
+</tr>
+<tr class="row-odd"><td>re2</td>
+<td>master</td>
+<td><a class="footnote-reference" href="#id4" id="id3">[1]</a></td>
+<td><tt class="docutils literal"><span class="pre">--enable-re2</span></tt> ありでビルドする場合のみ。</td>
+</tr>
+<tr class="row-even"><td>mecab</td>
+<td>&gt;= 0.99</td>
+<td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">--enable-mecab</span></tt> ありでビルドする場合のみ。</td>
+</tr>
+<tr class="row-odd"><td>ux-trie</td>
+<td>master</td>
+<td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">--enable-ux</span></tt> ありでビルドする場合のみ。</td>
+</tr>
+<tr class="row-even"><td>zookeeper</td>
+<td>&gt;= 3.3</td>
+<td>&nbsp;</td>
+<td><tt class="docutils literal"><span class="pre">--enable-zookeeper</span></tt> ありでビルドする場合のみ。
+C クライアントライブラリが必要である。</td>
+</tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[1]</td><td><em>(<a class="fn-backref" href="#id2">1</a>, <a class="fn-backref" href="#id3">2</a>)</em> 正規表現ライブラリとして、oniguruma または re2 のいずれかが必須です。
+ビルド時に <tt class="docutils literal"><span class="pre">--enable-re2</span></tt> が指定されない限り、oniguruma が使用されます。</td></tr>
+</tbody>
+</table>
+<p>お使いのディストリビューションによっては、一部のライブラリがバイナリパッケージとして提供されている場合もあります。
+バイナリパッケージが利用できない場合は、これらのライブラリもソースからビルドする必要があります。以下の各サイトからダウンロードできます (
+<a class="reference external" href="http://msgpack.org/">msgpack</a>,
+<a class="reference external" href="https://github.com/jubatus/jubatus-mpio">jubatus-mpio</a>,
+<a class="reference external" href="https://github.com/jubatus/jubatus-msgpack-rpc">jubatus-msgpack-rpc</a>,
+<a class="reference external" href="http://code.google.com/p/google-glog/">google-glog</a>,
+<a class="reference external" href="http://www.geocities.jp/kosako3/oniguruma/index_ja.html">oniguruma</a>,
+<a class="reference external" href="http://code.google.com/p/re2/">re2</a>,
+<a class="reference external" href="http://code.google.com/p/mecab/">mecab</a>,
+<a class="reference external" href="http://code.google.com/p/ux-trie/">ux-trie</a>,
+<a class="reference external" href="http://zookeeper.apache.org/">zookeeper</a>
+)。</p>
+<div class="section" id="ubuntu-12-04">
+<h3>Ubuntu 12.04<a class="headerlink" href="#ubuntu-12-04" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Ubuntu 12.04 でのビルドを行う例です。</p>
+<div class="highlight-python"><pre>$ sudo apt-get install build-essential git-core pkg-config
+
+$ sudo apt-get install libmsgpack-dev libonig-dev
+
+$ wget http://download.jubat.us/files/source/jubatus_mpio/jubatus_mpio-0.4.1.tar.gz
+$ tar xzf jubatus_mpio-0.4.1.tar.gz
+$ cd jubatus_mpio-0.4.1
+$ ./configure
+$ make
+$ sudo make install
+$ cd ..
+
+$ wget http://download.jubat.us/files/source/jubatus_msgpack-rpc/jubatus_msgpack-rpc-0.4.1.tar.gz
+$ tar xzf jubatus_msgpack-rpc-0.4.1.tar.gz
+$ cd jubatus_msgpack-rpc-0.4.1
+$ ./configure
+$ make
+$ sudo make install
+$ cd ..
+
+$ wget http://google-glog.googlecode.com/files/glog-0.3.3.tar.gz
+$ tar xzf glog-0.3.3.tar.gz
+$ cd glog-0.3.3
+$ ./configure
+$ make
+$ sudo make install
+$ cd ..</pre>
+</div>
+<p>Jubatus のビルドを行います。</p>
+<div class="highlight-python"><pre>$ wget -O jubatus-master.tar.gz https://github.com/jubatus/jubatus/archive/master.tar.gz
+$ tar xzf jubatus-master.tar.gz
+$ cd jubatus-master
+$ ./waf configure
+$ ./waf build
+$ sudo ./waf install
+$ sudo ldconfig</pre>
+</div>
+<p>この例は最小限の設定でビルドしているため (どのようなオプションが利用可能かは <tt class="docutils literal"><span class="pre">./waf</span> <span class="pre">configure</span> <span class="pre">--help</span></tt> をご覧ください)、分散モードや特徴抽出プラグインなど一部の機能は利用できません。</p>
+</div>
+<div class="section" id="mac-os-x">
+<h3>Mac OS X<a class="headerlink" href="#mac-os-x" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<p>Mac OS X では、スタンドアロンモードのビルドと実行が試験的にサポートされています。</p>
+<p><a class="reference external" href="https://github.com/jubatus/homebrew-jubatus">Homebrew tap リポジトリ</a> を使用すると簡単にインストールすることができます。</p>
+</div>
+<div class="section" id="id5">
+<h3>その他の環境<a class="headerlink" href="#id5" title="このヘッドラインへのパーマリンク">¶</a></h3>
+<ul class="simple">
+<li>Debian GNU/Linux では動作しています。</li>
+<li>Arch Linux ではスタンドアローンモードで動作しています。</li>
+<li>他の *BSD systems や Solarisでの動作報告をお待ちしています。</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3 で生成しました。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

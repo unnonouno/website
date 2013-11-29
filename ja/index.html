@@ -1,0 +1,361 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Jubatus : オンライン機械学習向け分散処理フレームワーク &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="#" />
+    <link rel="next" title="クイックスタート" href="quickstart.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="#"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/summary.html">Jubatus Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distributed.html">分散モードでのセットアップ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">プロジェクトに貢献する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">その他の情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">プロジェクトについて</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">Jubatus : オンライン機械学習向け分散処理フレームワーク</a><ul>
+<li><a class="reference internal" href="#get-jubatus">Get Jubatus</a></li>
+<li><a class="reference internal" href="#table-of-contents">Table of Contents</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#other-resources">Other Resources</a></li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="quickstart.html"
+         title="Next Chapter: クイックスタート">クイックスタート &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="_sources/index.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="jubatus">
+<h1>Jubatus : オンライン機械学習向け分散処理フレームワーク<a class="headerlink" href="#jubatus" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Jubatusは「分散したデータ」を「常に素早く」「深く分析」することを狙った分散基盤技術です。</p>
+<p>Jubatusの名前の由来は、俊敏な動物であるチータの学術名からの命名で、「ユバタス」と読みます。株式会社Preferred InfrastructureとNTTソフトウェアイノベーションセンタが共同開発した、日本発のオープンソースプロダクトです。</p>
+<p>最終的に全ての人にスケーラブルなオンライン機械学習フレームワークを提供することがJubatusの目標です。</p>
+<p>Jubatus は以下の特徴を持ったオンライン機械学習向け分散処理フレームワークです。</p>
+<ul class="simple">
+<li>オンライン機械学習ライブラリ: 多値分類、線形回帰、推薦（近傍探索）、グラフマイニング、異常検知、クラスタリング</li>
+<li>特徴ベクトル変換器 (fv_converter): データの前処理と特徴抽出</li>
+<li>フォルトトレラントな分散機械学習のためのフレームワーク</li>
+</ul>
+<p><a class="reference external" href="../en/">English documentation</a> is also available.</p>
+<div class="section" id="get-jubatus">
+<h2>Get Jubatus<a class="headerlink" href="#get-jubatus" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>Jubatus の最新バージョンは 0.5.0 (<a class="reference external" href="https://github.com/jubatus/jubatus/blob/master/ChangeLog.rst">ChangeLog</a>) です。Jubatus は LGPL v2.1 の下で配布されています。</p>
+<ul class="simple">
+<li>ソースコードのダウンロード: <a class="reference external" href="https://github.com/jubatus/jubatus/tarball/master">TAR</a> / <a class="reference external" href="https://github.com/jubatus/jubatus/zipball/master">ZIP</a> / <a class="reference external" href="https://github.com/jubatus/jubatus.git">Git</a></li>
+<li>バイナリパッケージ: <a class="reference internal" href="quickstart.html"><em>クイックスタート</em></a> をご覧ください。</li>
+</ul>
+</div>
+<div class="section" id="table-of-contents">
+<h2>Table of Contents<a class="headerlink" href="#table-of-contents" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタート</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#jubatus">Jubatus のインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#red-hat-enterprise-linux-6-2-64-bit">Red Hat Enterprise Linux 6.2 以降 (64-bit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#ubuntu-server-12-04-lts-64-bit">Ubuntu Server 12.04 LTS (64-bit)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#linux-32-bit">その他の Linux 環境 (32-bit を含む)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#mac-os-x">Mac OS X</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id2">Jubatus クライアントのインストール</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#c">C++</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#python">Python</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#ruby">Ruby</a></li>
+<li class="toctree-l3"><a class="reference internal" href="quickstart.html#java">Java</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id3">チュートリアル</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#id4">作ってみよう！</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview/summary.html">Jubatus Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/feature.html">Jubatusの特徴</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/feature.html#id1">データとその分析手法</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/feature.html#id2">Jubatusの特徴</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/feature.html#hadoop">Hadoopとの比較</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/machine_learning.html">Jubatusの機械学習ラインナップと利用シーン</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/machine_learning.html#id1">Jubatusの機械学習ラインナップ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/machine_learning.html#id2">特徴ベクトルコンバータ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/architecture.html">アーキテクチャ概要</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/architecture.html#id2">システム構成</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/architecture.html#id3">学習モデルの共有</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/architecture.html#id4">計算モデル</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/mix.html">分散学習機構Mixの概念説明</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/mix.html#id1">Mixの概念</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/mix.html#id2">Mixによるモデル情報更新のイメージ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/mix.html#id3">Mixにおける注意点</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">チュートリアル</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#id2">シナリオ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#id3">動作させてみる</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#id5">チュートリアルの詳細</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#dataset">Dataset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#id6">サーバの設定</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial.html#classifier-api-train-classify">Classifier API: 学習(train) と 分類(classify)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial.html#id7">その他のチュートリアル</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/classifier.html">Classifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/recommender.html">Recommender</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/regression.html">Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/graph.html">Graph</a></li>
+<li class="toctree-l3"><a class="reference internal" href="tutorial/stat.html">Stat</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distributed.html">分散モードでのセットアップ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_distributed.html#jubatus">Jubatusを分散モードで動かす前に</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_distributed.html#id2">分散モード</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tutorial_distributed.html#id4">クラスタの設定</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">ドキュメント</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="fv_convert.html">データ変換</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#id2">概要</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#datum">Datum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#id3">データ変換の流れ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#id4">フィルター</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#construct">文字列からの特徴抽出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#id8">数値からの特徴抽出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#id9">バイナリデータからの特徴抽出</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#id10">特徴ベクトルのキーのハッシュ化</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fv_convert.html#conversion-plugin">プラグイン</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="plugin.html">プラグインの開発</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="plugin.html#id2">データ変換プラグイン</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build.html">Jubatus をソースからビルドする</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="build.html#requirements">要件</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="framework.html">フレームワークの利用</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="server.html">コード生成器の利用</a></li>
+<li class="toctree-l3"><a class="reference internal" href="howtogetclients.html">クライアントの入手方法</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq_rpc_err_workaround.html">RPC エラーのハンドリング</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq_rpc_err_workaround.html#id1">共通</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq_rpc_err_workaround.html#id2">クライアント言語別 推奨手順</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="backup_and_recovery.html">学習モデルのバックアップとリカバリ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="backup_and_recovery.html#save-and-load">Save and Load</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="faq.html">よくある質問と回答 (FAQs)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#id1">インストール</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#rpc">RPC エラー</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#id3">分散環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#id4">学習モデル</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#id5">異常値検知</a></li>
+<li class="toctree-l3"><a class="reference internal" href="faq.html#id7">その他</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="commands.html">Commands</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#jubatus">Jubatus サーバ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#id1">分散環境</a></li>
+<li class="toctree-l3"><a class="reference internal" href="commands.html#id2">ユーティリティ</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html">Client API</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="common_structs.html">データ構造と共通メソッド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_classifier.html">Classifier</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_regression.html">Regression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_recommender.html">Recommender</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_nearest_neighbor.html">Nearest Neighbor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_anomaly.html">Anomaly</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_stat.html">Stat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_clustering.html">Clustering</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api_graph.html">Graph</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">プロジェクトに貢献する</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="howtocontribute.html#id2">プロジェクトに貢献するには</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocontribute.html#id4">コミュニティへの参加</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocontribute.html#issue">Issue の書き方</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocontribute.html#id5">Pull-Request ポリシー</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtocontribute.html#tips">コントリビュータのための Tips</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">その他の情報</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#id2">発表</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="misc.html#id3">2013</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc.html#id4">2012</a></li>
+<li class="toctree-l3"><a class="reference internal" href="misc.html#id5">2011</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="misc.html#id6">これまでの貢献</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">プロジェクトについて</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="aboutus.html#jubatus">Jubatus チームメンバ</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="other-resources">
+<h1>Other Resources<a class="headerlink" href="#other-resources" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<ul class="simple">
+<li><a class="reference external" href="http://blog.jubat.us">Jubatus Blog</a></li>
+<li><a class="reference external" href="http://twitter.com/JubatusOfficial">Twitter: &#64;JubatusOfficial</a> - 最新ニュース</li>
+<li><a class="reference external" href="http://groups.google.com/group/jubatus">Google Groups</a> - ディスカッションとアナウンス</li>
+<li><a class="reference external" href="https://github.com/jubatus/jubatus-example">Jubatus Examples</a></li>
+<li><a class="reference external" href="https://github.com/jubatus">Fork me on GitHub</a></li>
+<li><a class="reference external" href="http://www.slideshare.net/JubatusOfficial">SlideShare: JubatusOfficial</a></li>
+<li><a class="reference external" href="http://ci.jubat.us/">継続的インテグレーション (Jenkins)</a></li>
+</ul>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>索引</em></a></li>
+</ul>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3 で生成しました。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

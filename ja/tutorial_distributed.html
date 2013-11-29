@@ -1,0 +1,395 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>分散モードでのセットアップ &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="index.html" />
+    <link rel="next" title="ドキュメント" href="documentation.html" />
+    <link rel="prev" title="Java" href="tutorial/anomaly_java.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/summary.html">Jubatus Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">チュートリアル</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">分散モードでのセットアップ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="documentation.html">ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">プロジェクトに貢献する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">その他の情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">プロジェクトについて</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">分散モードでのセットアップ</a><ul>
+<li><a class="reference internal" href="#jubatus">Jubatusを分散モードで動かす前に</a></li>
+<li><a class="reference internal" href="#id2">分散モード</a></li>
+<li><a class="reference internal" href="#id4">クラスタの設定</a></li>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="tutorial/anomaly_java.html"
+         title="Previous Chapter: Java">&laquo; Java</a></li>
+  <li><a href="documentation.html"
+         title="Next Chapter: ドキュメント">ドキュメント &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="_sources/tutorial_distributed.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="id1">
+<h1>分散モードでのセットアップ<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>本項では、Jubatusを複数のサーバで分散させた環境構築を説明します。</p>
+<p>なお、本項を始める前に、スタンドアローン構成での構築を試すことをお勧めします。</p>
+<div class="section" id="jubatus">
+<h2>Jubatusを分散モードで動かす前に<a class="headerlink" href="#jubatus" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<p>JubatusではZooKeeperを用いて複数のサーバプロセス間を協調動作させることで、分散処理を行うことができます。</p>
+<p>ZooKeeperは分散環境で動作するソフトウェアを運用するうえでの困難を低減するためのサービスを提供します。</p>
+<p>Jubatusを分散環境で動作させる際、ZooKeeperが利用できない状況は致命的です。
+ZooKeeperを高い信頼性で動作させるために、以下のことを注意します。
+詳細は <a class="reference external" href="http://oss.infoscience.co.jp/hadoop/zookeeper/docs/current/">ZooKeeperのドキュメント</a> を参照して下さい。</p>
+<ol class="arabic simple">
+<li>奇数台のマシンによるクラスタ構成(アンサンブル)で運用します。</li>
+<li>ZooKeeperのパフォーマンスが低下し、Jubatusの動作が不安定になることを避けるため、ZooKeeper専用のマシンを用意することを推奨します。</li>
+</ol>
+<p>ここでは、1台のマシン内に複数のサーバプロセスを動作させる方法（分散処理）と3台のマシンで1サーバプロセスずつ動作させる方法（クラスタ構成）を説明していきます。</p>
+</div>
+<div class="section" id="id2">
+<h2>分散モード<a class="headerlink" href="#id2" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<ol class="arabic simple">
+<li>ZooKeeperのインストール</li>
+</ol>
+<blockquote>
+<div><p>Apache ZooKeeperの <a class="reference external" href="http://www.apache.org/dyn/closer.cgi/zookeeper/">ダウンロードサイト</a> からZooKeeperを取得します。</p>
+<div class="highlight-python"><pre>$ sudo wget http://ftp.meisei-u.ac.jp/mirror/apache/dist/zookeeper/stable/zookeeper-3.4.5.tar.gz
+$ tar xvf zookeeper-3.4.5.tar.gz</pre>
+</div>
+<p>※ プロキシを経由している場合は以下の1行を /etc/wgetrc に追記してください。</p>
+<div class="highlight-python"><pre>$ sudo vi /etc/wgetrc</pre>
+</div>
+<div class="highlight-python"><pre>http_proxy=http://username:password@proxy.example.com:port/</pre>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>ZooKeeperの設定ファイル（zoo.cfg）の作成</li>
+</ol>
+<blockquote>
+<div><p>zookeeper-3.4.5/conf 配下にサンプルの設定ファイルがありますので、そちらをコピーして作成してください。</p>
+<div class="highlight-python"><pre>$ sudo cp /path/to/zookeeper/conf/zoo_sample.cfg /path/to/zookeeper/conf/zoo.cfg</pre>
+</div>
+<p>ここでは、zoo.cfgの各設定項目の説明は省きます。</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>ZooKeeperの起動</li>
+</ol>
+<blockquote>
+<div><p>ZooKeeperは以下のようにして起動します。</p>
+<div class="highlight-python"><pre>$ sudo /path/to/zookeeper/bin/zkServer.sh start
+JMX enabled by default
+Using config: /path/to/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED</pre>
+</div>
+<p>以降では、ZooKeeperがlocalhost:2181で動作していると仮定します。この設定はzoo.cfgで変更可能です。</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>設定ファイルをZooKeeperに設定</li>
+</ol>
+<blockquote>
+<div><p>分散環境では、事前に設定ファイルをZooKeeperに登録します。登録にはjubaconfigというツールを使用します。</p>
+<div class="highlight-python"><pre>$ jubaconfig --cmd write --zookeeper=localhost:2181 --file jubatus-example/shogun/shogun.json --name shogun --type classifier</pre>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>Jubatus Proxyの起動</li>
+</ol>
+<blockquote>
+<div><p>Jubatus ProxyはRPCリクエストをクライアントからサーバに中継(プロキシ)します。
+分散環境では、クライアントからのRPCリクエストを直接サーバに送るのではなく、一度Proxyに送ります。</p>
+<p>Jubatus Proxyは各Jubatusサーバの種類ごとに提供されています。
+shogunに対応するProxyはjubaclassifier_proxyとなります。</p>
+<div class="highlight-python"><pre>$ jubaclassifier_proxy --zookeeper=localhost:2181 --rpc-port=9198</pre>
+</div>
+<p>これにより、jubaclassifier_proxyは、TCP 9198番ポートでRPCリクエストを待ち受けます。</p>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li>サーバプロセスの起動</li>
+</ol>
+<blockquote>
+<div><p>Jubatusサーバを分散環境で開始するには、&#8211;nameと&#8211;zookeeperオプションをサーバの起動時に指定します。
+同じ&#8211;nameで起動されたサーバプロセスは同じクラスタに所属し、お互いに協調動作します。</p>
+<p>一つのマシン内で複数のサーバを起動する場合は、各サーバプロセスごとにポート番号を変える必要があることに注意してください。</p>
+<div class="highlight-python"><pre>$ jubaclassifier --rpc-port=9180 --name=shogun --zookeeper=localhost:2181 &amp;
+$ jubaclassifier --rpc-port=9181 --name=shogun --zookeeper=localhost:2181 &amp;
+$ jubaclassifier --rpc-port=9182 --name=shogun --zookeeper=localhost:2181 &amp;</pre>
+</div>
+<p>Jubatusサーバが分散環境で開始する際に、ZooKeeperシステムの中にノードが作成されます。
+ZooKeeperのクライアント（zkCli.sh）を用いて、3つのプロセスがZooKeeperシステムに登録されていることが確認できます。</p>
+<div class="highlight-python"><pre>$ sudo /path/to/zookeeper/bin/zkCli.sh -server localhost:2181
+[zk: localhost:2181(CONNECTED) 0] ls /jubatus/actors/classifier/shogun/nodes
+[XXX.XXX.XXX.XXX_9180, XXX.XXX.XXX.XXX_9181, XXX.XXX.XXX.XXX_9182]</pre>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li>プログラムの実行</li>
+</ol>
+<blockquote>
+<div><p>今回はサーバではなくProxyに接続するため、ポート番号にはjubaclassifier_proxyで指定したポート番号を指定します。
+また、分散環境では、RPCリクエストをProxyへ送る際にクラスタ名を指定する必要があります。</p>
+<div class="highlight-python"><pre>$ python shogun.py</pre>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li>ZooKeeperの停止</li>
+</ol>
+<blockquote>
+<div><p>ZooKeeperを停止する場合は以下のようにして停止します。</p>
+<div class="highlight-python"><pre>$ sudo /path/to/zookeeper/bin/zkServer.sh stop</pre>
+</div>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h2>クラスタの設定<a class="headerlink" href="#id4" title="このヘッドラインへのパーマリンク">¶</a></h2>
+<blockquote>
+<div><p>Jubatusは各種プロセスを一括管理するための仕組みを備えています。
+今、それぞれのサーバに対して、以下の表に対応したプロセスを起動させることを考えます。</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="73%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">IP Address</th>
+<th class="head">Processes</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>192.168.0.1</td>
+<td>Terminal</td>
+</tr>
+<tr class="row-odd"><td>192.168.0.11</td>
+<td><div class="first last line-block">
+<div class="line">jubaclassifier - 1</div>
+<div class="line">jubaclassifier_proxy/client - 1</div>
+<div class="line">ZooKeeper - 1</div>
+</div>
+</td>
+</tr>
+<tr class="row-even"><td>192.168.0.12</td>
+<td><div class="first last line-block">
+<div class="line">jubaclassifier - 2</div>
+<div class="line">jubaclassifier_proxy/client - 2</div>
+<div class="line">ZooKeeper - 2</div>
+</div>
+</td>
+</tr>
+<tr class="row-odd"><td>192.168.0.13</td>
+<td><div class="first last line-block">
+<div class="line">jubaclassifier - 3</div>
+<div class="line">jubaclassifier_proxy/client - 3</div>
+<div class="line">ZooKeeper - 3</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple">
+<li>ZooKeeperの設定</li>
+</ol>
+<blockquote>
+<div><p>複数台でZooKeeperを起動する場合、それぞれのzoo.cfgに設定を追加します。</p>
+<div class="highlight-python"><pre>$ sudo vi /path/to/zookeeper/conf/zoo.cfg
+
+server.1=192.168.0.11:2888:3888
+server.2=192.168.0.12:2888:3888
+server.3=192.168.0.13:2888:3888</pre>
+</div>
+<p>また、zoo.cfgのdataDir=に指定したフォルダにmyidファイルを作成する必要があります。</p>
+<p>myidファイルの中身は上記の server.n=xxx.xxx.x.xxx:xxxx:xxxx の n に対応する数字を記述します。</p>
+<div class="highlight-python"><pre>$ cd /tmp/zookeeper         （dataDir=に指定しているディレクトリ）
+$ sudo vi myid</pre>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>ZooKeeperの起動</li>
+</ol>
+<blockquote>
+<div><p>ZooKeeperサーバを起動します(これらの間でアンサンブル構成を行う必要があります)。</p>
+<div class="highlight-python"><pre>[192.168.0.11]$ bin/zkServer.sh start
+[192.168.0.12]$ bin/zkServer.sh start
+[192.168.0.13]$ bin/zkServer.sh start</pre>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Jubatus Proxyの起動</li>
+</ol>
+<blockquote>
+<div><p>jubaclassifier_proxyプロセスを起動します。jubaclassifier_proxyはTCP 9199番ポートをデフォルトで使用します。</p>
+<div class="highlight-python"><pre>[192.168.0.11]$ jubaclassifier_proxy --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181
+[192.168.0.12]$ jubaclassifier_proxy --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181
+[192.168.0.13]$ jubaclassifier_proxy --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181</pre>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Jubavisor:サーバプロセス管理のエージェント</li>
+</ol>
+<blockquote>
+<div><p>jubavisorはサーバプロセスを管理するためのエージェントプロセスです。</p>
+<p>jubavisorを使うことで、Jubatusサーバの各プロセスを、操作用コマンドであるjubactlからのRPCリクエストによって管理することができます。
+jubavisorはTCP 9198番ポートをデフォルトで使用します。</p>
+<div class="highlight-python"><pre>[192.168.0.11]$ jubavisor --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181 --daemon
+[192.168.0.12]$ jubavisor --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181 --daemon
+[192.168.0.13]$ jubavisor --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181 --daemon</pre>
+</div>
+<p>jubactlからjubavisorに命令を送信してみましょう。</p>
+<div class="highlight-python"><pre>[192.168.0.1]$ jubactl -c start  --server=jubaclassifier --type=classifier --name=shogun --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181
+ sending start / jubaclassifier/shogun to 192.168.0.11_9198...ok.
+ sending start / jubaclassifier/shogun to 192.168.0.12_9198...ok.
+ sending start / jubaclassifier/shogun to 192.168.0.13_9198...ok.
+[192.168.0.1]$ jubactl -c status --server=jubaclassifier --type=classifier --name=shogun --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181
+active jubaclassifier_proxy members:
+ 192.168.0.11_9199
+ 192.168.0.12_9199
+ 192.168.0.13_9199
+active jubavisor members:
+ 192.168.0.11_9198
+ 192.168.0.12_9198
+ 192.168.0.13_9198
+active shogun members:
+ 192.168.0.11_9200
+ 192.168.0.12_9200
+ 192.168.0.13_9200</pre>
+</div>
+<p>membersの表示から、サーバが起動していることが分かります。
+複数のホストでクライアントを同時に動かしてみましょう。</p>
+<div class="highlight-python"><pre>$ python shogun.py</pre>
+</div>
+<p>なお、Jubatusサーバの停止もjubactlから行うことができます。</p>
+<div class="highlight-python"><pre>[192.168.0.1]$ jubactl -c stop --server=jubaclassifier --type=classifier --name=shogun --zookeeper 192.168.0.11:2181,192.168.0.12:2181,192.168.0.13:2181</pre>
+</div>
+</div></blockquote>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3 で生成しました。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

@@ -1,0 +1,192 @@
+
+  
+  
+ 
+  
+ 
+
+
+<!DOCTYPE html>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>フレームワークの利用 &mdash; Jubatus</title>
+    
+    <link rel="stylesheet" href="_static/basic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootswatch/3.0.0/spacelab/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.5.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="_static/js/jquery-fix.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-3.0.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="_static/bootstrap-sphinx.js"></script>
+    <link rel="shortcut icon" href="_static/favicon.ico"/>
+    <link rel="top" title="Jubatus" href="index.html" />
+    <link rel="up" title="ドキュメント" href="documentation.html" />
+    <link rel="next" title="コード生成器の利用" href="server.html" />
+    <link rel="prev" title="Jubatus をソースからビルドする" href="build.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+  </head>
+  <body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Jubatus</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            <li class="divider-vertical"></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a href="index.html"
+     class="dropdown-toggle"
+     data-toggle="dropdown">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+    ><ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">クイックスタート</a></li>
+<li class="toctree-l1"><a class="reference internal" href="overview/summary.html">Jubatus Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial.html">チュートリアル</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial_distributed.html">分散モードでのセットアップ</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="documentation.html">ドキュメント</a></li>
+<li class="toctree-l1"><a class="reference internal" href="references.html">References</a></li>
+<li class="toctree-l1"><a class="reference internal" href="howtocontribute.html">プロジェクトに貢献する</a></li>
+<li class="toctree-l1"><a class="reference internal" href="misc.html">その他の情報</a></li>
+<li class="toctree-l1"><a class="reference internal" href="aboutus.html">プロジェクトについて</a></li>
+</ul>
+</ul>
+</li>
+              
+                <li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Page <b class="caret"></b></a>
+  <ul class="dropdown-menu localtoc"><ul>
+<li><a class="reference internal" href="#">フレームワークの利用</a><ul>
+</ul>
+</li>
+</ul>
+</ul>
+</li>
+              
+            
+            
+              
+                
+  <li><a href="build.html"
+         title="Previous Chapter: Jubatus をソースからビルドする">&laquo; Jubatus をソースからビル...</a></li>
+  <li><a href="server.html"
+         title="Next Chapter: コード生成器の利用">コード生成器の利用 &raquo;</a></li>
+              
+            
+            
+            
+            
+              <li>
+<div id="sourcelink">
+  <a href="_sources/framework.txt"
+     rel="nofollow">Source</a>
+</div></li>
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      
+  <div class="section" id="id1">
+<h1>フレームワークの利用<a class="headerlink" href="#id1" title="このヘッドラインへのパーマリンク">¶</a></h1>
+<p>Jubatus フレームワークを使用することで、分散型の機械学習システムを容易に実装することができる。</p>
+<p>本章では、Jubatus フレームワークを用いて mix を含む独自の機械学習アルゴリズムを実現する方法について記述する。</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="server.html">コード生成器の利用</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="server.html#id2">開発の流れ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#idl">IDL を使用する理由</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#id4">ファイルの構成</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#jenerator"><tt class="docutils literal"><span class="pre">jenerator</span></tt>: コード生成器</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="server.html#id5"><tt class="docutils literal"><span class="pre">jenerator</span></tt> のビルド</a></li>
+<li class="toctree-l3"><a class="reference internal" href="server.html#proxy-idl">サーバ/Proxy を IDL から生成する</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#id6">サーバの実装</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="server.html#mixable">Mixable クラス</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#proxy">Proxy の実装</a></li>
+<li class="toctree-l2"><a class="reference internal" href="server.html#id7">今後の課題</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="server.html#id8">インターフェースと処理記述</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="howtogetclients.html">クライアントの入手方法</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="howtogetclients.html#id2">生成済みクライアントの利用</a></li>
+<li class="toctree-l2"><a class="reference internal" href="howtogetclients.html#jenerator">jenerator でクライアントを生成する</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2011,2013 PFI &amp; NTT.<br/>
+      このドキュメントは <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.2b3 で生成しました。<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
